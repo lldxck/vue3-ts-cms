@@ -1,5 +1,5 @@
 // vuex-shim.d.ts
-
+/* eslint-disable */
 import { ComponentCustomProperties } from 'vue'
 import { Store } from 'vuex'
 
