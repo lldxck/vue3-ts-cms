@@ -7,6 +7,12 @@ const httpRequest = new HttpRequest({
     requestInterceptor: (config) => {
       console.log('实例请求成功拦截')
 
+      // 1.携带token的拦截
+      const token = '123456'
+      if (token) {
+        config.headers!.Authorization = `Bearer ${token}`
+      }
+
       return config
     },
     requestInterceptorCatch: (err) => {
