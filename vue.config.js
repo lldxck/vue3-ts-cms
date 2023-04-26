@@ -3,6 +3,7 @@ const { defineConfig } = require('@vue/cli-service')
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+const UnoCSS = require('@unocss/webpack').default
 
 module.exports = defineConfig({
   // 配置方式一：通过CLI提供给我们的选项来配置
@@ -25,8 +26,12 @@ module.exports = defineConfig({
       }),
       Components({
         resolvers: [ElementPlusResolver()]
-      })
-    ]
+      }),
+      UnoCSS()
+    ],
+    optimization: {
+      realContentHash: true
+    }
   }
   // 值为函数
   // configureWebpack: (config) => {

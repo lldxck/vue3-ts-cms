@@ -11,7 +11,20 @@ import store from './store'
 // import './service/axios_demo'
 import httpRequest from './service'
 
+import 'normalize.css'
+import './assets/css/index.less'
+// import '@unocss/reset/tailwind.css'
+import 'uno.css'
+
+
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
 const app = createApp(App)
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
+
 // app.use(ElementPlus)
 app.use(router).use(store).mount('#app')
 
